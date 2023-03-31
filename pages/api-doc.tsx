@@ -21,6 +21,16 @@ export const getStaticProps: GetStaticProps = async () => {
         title: 'Next Swagger API Example',
         version: '1.0',
       },
+      // Add Auth 
+       components: {
+        securitySchemes: {
+          bearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          }
+        }
+      },
       security: [{
         bearerAuth: []
       }]

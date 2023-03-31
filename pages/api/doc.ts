@@ -9,6 +9,16 @@ const swaggerHandler = withSwagger({
     },
   },
   schemaFolders: ['models'],
+  // Add Auth 
+   components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      }
+    }
+  },
   security: [{
     bearerAuth: []
   }]
